@@ -9,7 +9,7 @@ function getAuthorById(PDO $pdo, int $id): ?array
     return $stmt->fetch() ?: null;
 }
 
-function getBooksByAuthor(PDO $pdo, int $authorId): array
+function getBooksByAuthor(PDO $pdo, int $id): array
 {
     $stmt = $pdo->prepare('
         SELECT b.*, a.name AS author_name
@@ -18,6 +18,6 @@ function getBooksByAuthor(PDO $pdo, int $authorId): array
         WHERE b.author_id = ?
         ORDER BY b.title ASC
     ');
-    $stmt->execute([$authorId]);
+    $stmt->execute([$id]);
     return $stmt->fetchAll();
 }
