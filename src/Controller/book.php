@@ -12,7 +12,7 @@ function book_ctrl(PDO $pdo): void
         die("Vous devez définir un paramère id valide dans l'url");
     }
     
-    $book = getBookById($pdo, $book_id);
+    $book = getBookById( $book_id);
     
     if(!$book) {
         http_response_code(404);
@@ -22,6 +22,14 @@ function book_ctrl(PDO $pdo): void
     require_once DOCUMENT_ROOT . '/src/View/book/show.php';
 
 }
+
+function book_list_ctrl(PDO $pdo): void
+{
+    $books = getAllBooks($pdo);
+
+    require_once DOCUMENT_ROOT .  '/src/View/Book/list.php';
+
+ }
 
 
 
