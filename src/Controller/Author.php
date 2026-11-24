@@ -21,9 +21,8 @@ function author_ctrl($pdo): void
     
     $book = getBooksByAuthor($pdo, $author_id);
     
-    require __DIR__ . '/../View/Author/show.php';
+    require_once DOCUMENT_ROOT . '/src/View/Author/show.php';
+
+    }    
 
     
-}    
-
-
