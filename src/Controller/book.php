@@ -19,7 +19,7 @@ function book_ctrl(PDO $pdo): void
         die("Livre introuvable (404)");
     }
     
-    require __DIR__ . '/../View/book/show.php';
+    require_once DOCUMENT_ROOT . '/src/View/book/show.php';
 
 }
 
