@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-function getAllBooks(PDO $pdo): array
+function getAllBooks(): array
 {
+    global $pdo;
+
     $stmt = $pdo->query('
         SELECT b.*, a.name AS author_name
         FROM books b
@@ -13,8 +15,10 @@ function getAllBooks(PDO $pdo): array
     return $stmt->fetchAll();
 }
 
-function getBookById(PDO $pdo, int $id): ?array
+function getBookById(int $id): ?array
 {
+    global $pdo;
+
     $stmt = $pdo->prepare('
         SELECT b.*, a.name AS author_name
         FROM books b
@@ -25,8 +29,10 @@ function getBookById(PDO $pdo, int $id): ?array
     return $stmt->fetch() ?: null;
 }
 
-function deleteBook(PDO $pdo, int $id): void
+function deleteBook(int $id): void
 {
+    global $pdo;
+
     $stmt = $pdo->prepare('DELETE FROM books WHERE id = ?');
     $stmt->execute([$id]);
 }
