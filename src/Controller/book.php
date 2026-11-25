@@ -1,6 +1,6 @@
 <?php 
 
-function book_ctrl(PDO $pdo): void
+function book_ctrl(): void
 {
     $book_id = null;
     
@@ -23,14 +23,10 @@ function book_ctrl(PDO $pdo): void
 
 }
 
-function book_list_ctrl(PDO $pdo): void
+function book_list_ctrl(): void
 {
-    $books = getAllBooks($pdo);
+    $books = getAllBooks();
 
     require_once DOCUMENT_ROOT .  '/src/View/Book/list.php';
 
  }
-
-
-
-

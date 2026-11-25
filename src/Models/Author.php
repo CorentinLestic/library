@@ -2,15 +2,19 @@
 
 declare(strict_types=1);
 
-function getAuthorById(PDO $pdo, int $id): ?array 
+function getAuthorById( int $id): ?array 
 {
+    global $pdo;
+    
     $stmt = $pdo->prepare('SELECT * FROM authors WHERE id = ?');
     $stmt->execute([$id]);
     return $stmt->fetch() ?: null;
 }
 
-function getBooksByAuthor(PDO $pdo, int $id): array
+function getBooksByAuthor( int $id): array
 {
+    global $pdo;
+
     $stmt = $pdo->prepare('
         SELECT b.*, a.name AS author_name
         FROM books b
