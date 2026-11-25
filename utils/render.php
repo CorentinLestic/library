@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function renderView(string $template, array $data = []): void
+function render(string $template, array $data = []): void
 {
     extract($data);
 
