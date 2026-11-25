@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$dsn = 'sqlite:' . __DIR__ . '/../sql/db.sqlite';
+$dsn = 'sqlite:' . __DIR__ . 'sql/library_sqlite.sql';
 
 $pdo = new PDO(
     $dsn,
