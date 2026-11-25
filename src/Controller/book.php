@@ -24,7 +24,7 @@ function book_ctrl(): void
 
     $title = $book['title'];
 
-    renderView('book/show', compact('book', 'title'));
+    render('book/show', compact('book', 'title'));
 }
 
 function book_list_ctrl(): void
@@ -32,5 +32,5 @@ function book_list_ctrl(): void
     $books = getAllBooks();
     $title = 'Liste des livres';
 
-    renderView('book/list', compact('books', 'title'));
+    render('book/list', compact('books', 'title'));
 }
