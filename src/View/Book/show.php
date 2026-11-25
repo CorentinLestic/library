@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Liste des livres</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="header__container">
@@ -35,9 +37,12 @@
             <?php endif; ?>
         </section>
     </main>
+
     <footer class="footer">
         <p>&copy;<?= date('Y') ?></p>
-        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
 </body>
+
 </html>

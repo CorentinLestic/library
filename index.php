@@ -5,7 +5,8 @@ declare(strict_types=1);
 // fichiers de config
 define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
 
-require_once DOCUMENT_ROOT . '/database/database.php'; // crée $pdo
+require_once DOCUMENT_ROOT . '/database/database.php'; 
+require_once DOCUMENT_ROOT . '/utils/render.php';      
 
 // models
 require_once DOCUMENT_ROOT . '/src/Models/Author.php';
