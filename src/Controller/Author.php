@@ -23,6 +23,8 @@ function author_ctrl(): void
     
     require_once DOCUMENT_ROOT . '/src/View/Author/show.php';
 
+    renderView('author/show', compact('author', 'book', 'title'));
+
     }    
 
     

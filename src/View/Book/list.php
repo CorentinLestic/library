@@ -1,26 +1,21 @@
-<h1>Liste des livres</h1>
-
-<?php if (empty($books)): ?>
-    <p>Aucun livre pour le moment.</p>
-<?php else: ?>
-    <table>
-        <thead>
-            <tr>
-                <th>Titre</th>
-                <th>Auteur</th>
-                <th>Détail</th>
-            </tr>
-        </thead>
-        <tbody>
+<section>
+    <?php if (empty($books)): ?>
+        <p>Aucun livre pour le moment.</p>
+    <?php else: ?>
+        <ul>
             <?php foreach ($books as $book): ?>
-                <tr>
-                    <td><?= htmlspecialchars($book['title']) ?></td>
-                    <td><?= htmlspecialchars($book['author_name']) ?></td>
-                    <td>
-                        <a href="/book?id=<?= (int) $book['id'] ?>">Voir</a>
-                    </td>
-                </tr>
+                <li>
+                    <a href="index.php?page=book&id=<?= (int) $book['id'] ?>">
+                        <?= htmlspecialchars($book['title']) ?>
+                    </a>
+                    <i>
+                        par
+                        <a href="index.php?page=author&id=<?= (int) $book['author_id'] ?>">
+                            <?= htmlspecialchars($book['author_name']) ?>
+                        </a>
+                    </i>
+                </li>
             <?php endforeach; ?>
-        </tbody>
-    </table>
-<?php endif; ?>
+        </ul>
+    <?php endif; ?>
+</section>
