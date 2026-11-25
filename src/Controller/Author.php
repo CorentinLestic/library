@@ -1,6 +1,6 @@
 <?php
 
-function author_ctrl($pdo): void
+function author_ctrl(): void
 {
     $author_id = null;
     
@@ -12,14 +12,14 @@ function author_ctrl($pdo): void
         die("Vous devez définir un Auteurs valide");
     }
     
-    $author = getAuthorById($pdo, $author_id);
+    $author = getAuthorById( $author_id);
     
     if(!$author) {
         http_response_code(404);
         die("Auteur introuvables (404)");
     }
     
-    $book = getBooksByAuthor($pdo, $author_id);
+    $book = getBooksByAuthor( $author_id);
     
     require_once DOCUMENT_ROOT . '/src/View/Author/show.php';
 
